@@ -478,6 +478,94 @@ $0.2$
 
 
 
+\newpage
+
+\section{رابطه ها در پایگاه داده}
+
+
+
+\def\myarm{1cm}
+\def\myangle{0}
+\tikzset{
+  arm/.default=1cm,
+  arm/.code={\def\myarm{#1}}, % store value in \myarm
+  angle/.default=0,
+  angle/.code={\def\myangle{#1}} % store value in \myangle
+}
+
+% Define the myncbar to path
+\tikzset{
+    myncbar/.style = {to path={
+        % We need to calculate a couple of coordinates to help us draw
+        % the path. 
+        let
+            % Same as (\tikztotarget)++(\myangle:\myarm)
+            \p1=($(\tikztotarget)+(\myangle:\myarm)$)
+        in
+            -- ++(\myangle:\myarm) coordinate (tmp)
+            % Find the projection of the (tmp) coordinate
+            % on the line from the target to p1
+            -- ($(\tikztotarget)!(tmp)!(\p1)$)
+            -- (\tikztotarget)\tikztonodes
+    }}
+}
+
+
+
+
+
+
+\begin{tikzpicture}
+     \node[draw,rectangle] at (0,0) (roll) {
+	\text{غلطک}
+	};
+	\node[draw,rectangle] at (3,-2) (product) {
+	\text{محصول}
+	};
+ 	\node[draw,rectangle] at (0,-2) (productionline) {
+	\text{
+تولید
+خط
+}
+	};
+	\node[draw,rectangle] at (-3,0) (stand) {
+	\text{استند}
+	};
+	\node[draw,rectangle] at (-3,-2) (stand) {
+	\text{جایگاه}
+	};
+	\node[draw,rectangle] at (-7,0) (stand) {
+	\text{
+استند
+تعویض
+}
+	};
+	\node[draw,rectangle] at (0,2) (changeroll) {
+	\text{
+غلطک
+تعویض
+	}
+	};
+    \node[draw,rectangle] at (3,0) (calbre) {
+	\text{کالیبر}
+	};
+	\node[draw,rectangle] at (7,1) (tarashcalbre) {
+	\text{ 
+کالیبر
+تراش
+	}};
+	\node[draw,rectangle] at (7,-1) (changecalbre) {
+	\text{ 
+کالیبر
+تعویض
+	}};
+
+    
+    %\draw[black ,->] (roll) to (calbre);
+\end{tikzpicture}
+
+
+
 
 
 
