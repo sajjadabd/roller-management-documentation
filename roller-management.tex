@@ -12,6 +12,18 @@
 
 \usepackage[margin=1.1in,footskip=.25in]{geometry}
 
+
+\usepackage{tikz}
+\usetikzlibrary{graphs,quotes,arrows.meta}
+\usetikzlibrary{automata,positioning}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{chains}
+\usetikzlibrary{matrix,backgrounds}
+\usetikzlibrary{calc}
+
+
+
+
 \usepackage{amsmath, amssymb}
 \usepackage{mathtools}
 
@@ -314,6 +326,152 @@
 \text{مهمترین فاکتور مدیریت غلطک}
 \end{align*}
 
+
+
+
+
+
+
+
+
+\section{ایجاد غلطک}
+
+
+
+
+\begin{tikzpicture}[level distance=1.5cm,
+  level 1/.style={sibling distance=9cm},
+  level 2/.style={sibling distance=1.5cm}]
+  \node {سکشن / بارمیل}
+    child {node {
+\text{
+گرد
+ میله 
+ مختلف
+های
+سایز
+}
+}
+      child {node {\lr{ Roughing / Intermediate / Finishing }}
+		child { node {
+\text{ 
+جنس
+، قطر
+، کالیبر 
+چنتا 
+}
+} }
+}
+    }
+    child {node { 
+\text{
+ \lr{ 14/16/18/20 }
+های
+ سایز
+ تیرآهن
+، ناودونی 
+، نبشی 
+ }
+}
+      child {node { \lr{Reversible , Due , Uni} } 
+		child { node {
+\text{ 
+جنس
+، قطر
+، کالیبر 
+چنتا 
+}
+} }
+}
+    };
+\end{tikzpicture}
+
+
+
+
+
+\section{گزارش تعویض غلطک ها}
+
+
+- کد غلطک
+
+- تغییر وضعیت غلطک
+
+- محل قرارگیری غلطک
+
+- توضیحات
+
+- تاریخ
+
+
+
+
+\section{گزارش تعویض استند ها}
+
+
+
+- کد استند
+
+- وضعیت استند
+
+- تاریخ 
+
+
+
+
+\newpage
+
+\section{گزارش تراش غلطک ها}
+
+
+
+- کد غلطک
+
+- تاریخ
+
+- قطر قدیم غلطک
+
+- قطر جدید غلطک
+
+- میزان تراش کلی
+
+
+\begin{align*}
+\text{ میزان تراش کالیبرها }
+\Rightarrow
+\begin{cases}
+\text{کالیبر 1}
+\\
+\text{کالیبر 2}
+\\
+\text{کالیبر 3}
+\\
+\text{کالیبر 4}
+\end{cases}
+\end{align*}
+
+
+
+
+
+
+
+\section{نکات مهم}
+
+
+** وقتی تمام کالیبر های یک غلطک تناژ خود را میزنند ، غلطک می رود برای تراشکاری
+
+
+** غلطک تا میزان قطر مینیمم تراش می خورد و بعد از اینکه به مینیمم قطر خود رسید اسقاط می شود ، اینجا باید
+ $ \cfrac{kg}{ton} $
+  آن را به دست آورد ، بهترین غلطک های دنیا
+$ 0.2 \frac{kg}{ton} $
+
+مثلاً اگر 500000 تن در سال محصول می خواهیم ، 
+\lr{x}
+را ضربدر 
+$0.2$
+می کنیم تا به دست بیاوریم چند تا غلطک نیاز داریم
 
 
 
